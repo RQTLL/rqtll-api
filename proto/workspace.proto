@@ -8,23 +8,23 @@ message OpenWorkspaceRequest {
   string path = 1;
 }
 
-message PackageInfo {
+message WorkspacePackageInfo {
   string name = 1;
   string path = 2;
   string build_type = 3;
 }
 
 message OpenWorkspaceResponse {
-  repeated PackageInfo packages = 1;
+  repeated WorkspacePackageInfo packages = 1;
   Status status = 2;
 }
 
-message ListPackagesRequest {
+message ListWorkspacePackagesRequest {
   string workspace_path = 1;
 }
 
-message ListPackagesResponse {
-  repeated PackageInfo packages = 1;
+message ListWorkspacePackagesResponse {
+  repeated WorkspacePackageInfo packages = 1;
   Status status = 2;
 }
 
@@ -37,6 +37,6 @@ message CreatePackageRequest {
 
 service WorkspaceService {
   rpc OpenWorkspace(OpenWorkspaceRequest) returns (OpenWorkspaceResponse);
-  rpc ListPackages(ListPackagesRequest) returns (ListPackagesResponse);
+  rpc ListPackages(ListWorkspacePackagesRequest) returns (ListWorkspacePackagesResponse);
   rpc CreatePackage(CreatePackageRequest) returns (Status);
 }

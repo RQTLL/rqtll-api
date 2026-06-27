@@ -35,9 +35,9 @@ class ROSInstallerServiceStub:
             channel: A grpc.Channel.
         """
         self.InstallEnvironment = channel.unary_stream(
-                '/rqt2_api.ROSInstallerService/InstallEnvironment',
-                request_serializer=installer__pb2.InstallRequest.SerializeToString,
-                response_deserializer=installer__pb2.InstallProgress.FromString,
+                '/rqt2.api.v1.ROSInstallerService/InstallEnvironment',
+                request_serializer=installer__pb2.EnvInstallRequest.SerializeToString,
+                response_deserializer=installer__pb2.EnvInstallProgress.FromString,
                 _registered_method=True)
 
 
@@ -55,14 +55,14 @@ def add_ROSInstallerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'InstallEnvironment': grpc.unary_stream_rpc_method_handler(
                     servicer.InstallEnvironment,
-                    request_deserializer=installer__pb2.InstallRequest.FromString,
-                    response_serializer=installer__pb2.InstallProgress.SerializeToString,
+                    request_deserializer=installer__pb2.EnvInstallRequest.FromString,
+                    response_serializer=installer__pb2.EnvInstallProgress.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'rqt2_api.ROSInstallerService', rpc_method_handlers)
+            'rqt2.api.v1.ROSInstallerService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('rqt2_api.ROSInstallerService', rpc_method_handlers)
+    server.add_registered_method_handlers('rqt2.api.v1.ROSInstallerService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -83,9 +83,9 @@ class ROSInstallerService:
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/rqt2_api.ROSInstallerService/InstallEnvironment',
-            installer__pb2.InstallRequest.SerializeToString,
-            installer__pb2.InstallProgress.FromString,
+            '/rqt2.api.v1.ROSInstallerService/InstallEnvironment',
+            installer__pb2.EnvInstallRequest.SerializeToString,
+            installer__pb2.EnvInstallProgress.FromString,
             options,
             channel_credentials,
             insecure,

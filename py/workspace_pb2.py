@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 import types_pb2 as types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fworkspace.proto\x12\x0brqt2.api.v1\x1a\x0btypes.proto\"$\n\x14OpenWorkspaceRequest\x12\x0c\n\x04path\x18\x01 \x01(\t\"=\n\x0bPackageInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x12\n\nbuild_type\x18\x03 \x01(\t\"h\n\x15OpenWorkspaceResponse\x12*\n\x08packages\x18\x01 \x03(\x0b\x32\x18.rqt2.api.v1.PackageInfo\x12#\n\x06status\x18\x02 \x01(\x0b\x32\x13.rqt2.api.v1.Status\"-\n\x13ListPackagesRequest\x12\x16\n\x0eworkspace_path\x18\x01 \x01(\t\"g\n\x14ListPackagesResponse\x12*\n\x08packages\x18\x01 \x03(\x0b\x32\x18.rqt2.api.v1.PackageInfo\x12#\n\x06status\x18\x02 \x01(\x0b\x32\x13.rqt2.api.v1.Status\"\xc1\x01\n\x14\x43reatePackageRequest\x12\x16\n\x0eworkspace_path\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\nbuild_type\x18\x03 \x01(\t\x12?\n\x07options\x18\x04 \x03(\x0b\x32..rqt2.api.v1.CreatePackageRequest.OptionsEntry\x1a.\n\x0cOptionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x32\x88\x02\n\x10WorkspaceService\x12V\n\rOpenWorkspace\x12!.rqt2.api.v1.OpenWorkspaceRequest\x1a\".rqt2.api.v1.OpenWorkspaceResponse\x12S\n\x0cListPackages\x12 .rqt2.api.v1.ListPackagesRequest\x1a!.rqt2.api.v1.ListPackagesResponse\x12G\n\rCreatePackage\x12!.rqt2.api.v1.CreatePackageRequest\x1a\x13.rqt2.api.v1.Statusb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fworkspace.proto\x12\x0brqt2.api.v1\x1a\x0btypes.proto\"$\n\x14OpenWorkspaceRequest\x12\x0c\n\x04path\x18\x01 \x01(\t\"F\n\x14WorkspacePackageInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x12\n\nbuild_type\x18\x03 \x01(\t\"q\n\x15OpenWorkspaceResponse\x12\x33\n\x08packages\x18\x01 \x03(\x0b\x32!.rqt2.api.v1.WorkspacePackageInfo\x12#\n\x06status\x18\x02 \x01(\x0b\x32\x13.rqt2.api.v1.Status\"6\n\x1cListWorkspacePackagesRequest\x12\x16\n\x0eworkspace_path\x18\x01 \x01(\t\"y\n\x1dListWorkspacePackagesResponse\x12\x33\n\x08packages\x18\x01 \x03(\x0b\x32!.rqt2.api.v1.WorkspacePackageInfo\x12#\n\x06status\x18\x02 \x01(\x0b\x32\x13.rqt2.api.v1.Status\"\xc1\x01\n\x14\x43reatePackageRequest\x12\x16\n\x0eworkspace_path\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\nbuild_type\x18\x03 \x01(\t\x12?\n\x07options\x18\x04 \x03(\x0b\x32..rqt2.api.v1.CreatePackageRequest.OptionsEntry\x1a.\n\x0cOptionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x32\x9a\x02\n\x10WorkspaceService\x12V\n\rOpenWorkspace\x12!.rqt2.api.v1.OpenWorkspaceRequest\x1a\".rqt2.api.v1.OpenWorkspaceResponse\x12\x65\n\x0cListPackages\x12).rqt2.api.v1.ListWorkspacePackagesRequest\x1a*.rqt2.api.v1.ListWorkspacePackagesResponse\x12G\n\rCreatePackage\x12!.rqt2.api.v1.CreatePackageRequest\x1a\x13.rqt2.api.v1.Statusb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,18 +36,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEPACKAGEREQUEST_OPTIONSENTRY']._serialized_options = b'8\001'
   _globals['_OPENWORKSPACEREQUEST']._serialized_start=45
   _globals['_OPENWORKSPACEREQUEST']._serialized_end=81
-  _globals['_PACKAGEINFO']._serialized_start=83
-  _globals['_PACKAGEINFO']._serialized_end=144
-  _globals['_OPENWORKSPACERESPONSE']._serialized_start=146
-  _globals['_OPENWORKSPACERESPONSE']._serialized_end=250
-  _globals['_LISTPACKAGESREQUEST']._serialized_start=252
-  _globals['_LISTPACKAGESREQUEST']._serialized_end=297
-  _globals['_LISTPACKAGESRESPONSE']._serialized_start=299
-  _globals['_LISTPACKAGESRESPONSE']._serialized_end=402
-  _globals['_CREATEPACKAGEREQUEST']._serialized_start=405
-  _globals['_CREATEPACKAGEREQUEST']._serialized_end=598
-  _globals['_CREATEPACKAGEREQUEST_OPTIONSENTRY']._serialized_start=552
-  _globals['_CREATEPACKAGEREQUEST_OPTIONSENTRY']._serialized_end=598
-  _globals['_WORKSPACESERVICE']._serialized_start=601
-  _globals['_WORKSPACESERVICE']._serialized_end=865
+  _globals['_WORKSPACEPACKAGEINFO']._serialized_start=83
+  _globals['_WORKSPACEPACKAGEINFO']._serialized_end=153
+  _globals['_OPENWORKSPACERESPONSE']._serialized_start=155
+  _globals['_OPENWORKSPACERESPONSE']._serialized_end=268
+  _globals['_LISTWORKSPACEPACKAGESREQUEST']._serialized_start=270
+  _globals['_LISTWORKSPACEPACKAGESREQUEST']._serialized_end=324
+  _globals['_LISTWORKSPACEPACKAGESRESPONSE']._serialized_start=326
+  _globals['_LISTWORKSPACEPACKAGESRESPONSE']._serialized_end=447
+  _globals['_CREATEPACKAGEREQUEST']._serialized_start=450
+  _globals['_CREATEPACKAGEREQUEST']._serialized_end=643
+  _globals['_CREATEPACKAGEREQUEST_OPTIONSENTRY']._serialized_start=597
+  _globals['_CREATEPACKAGEREQUEST_OPTIONSENTRY']._serialized_end=643
+  _globals['_WORKSPACESERVICE']._serialized_start=646
+  _globals['_WORKSPACESERVICE']._serialized_end=928
 # @@protoc_insertion_point(module_scope)

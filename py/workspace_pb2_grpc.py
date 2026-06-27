@@ -42,8 +42,8 @@ class WorkspaceServiceStub:
                 _registered_method=True)
         self.ListPackages = channel.unary_unary(
                 '/rqt2.api.v1.WorkspaceService/ListPackages',
-                request_serializer=workspace__pb2.ListPackagesRequest.SerializeToString,
-                response_deserializer=workspace__pb2.ListPackagesResponse.FromString,
+                request_serializer=workspace__pb2.ListWorkspacePackagesRequest.SerializeToString,
+                response_deserializer=workspace__pb2.ListWorkspacePackagesResponse.FromString,
                 _registered_method=True)
         self.CreatePackage = channel.unary_unary(
                 '/rqt2.api.v1.WorkspaceService/CreatePackage',
@@ -83,8 +83,8 @@ def add_WorkspaceServiceServicer_to_server(servicer, server):
             ),
             'ListPackages': grpc.unary_unary_rpc_method_handler(
                     servicer.ListPackages,
-                    request_deserializer=workspace__pb2.ListPackagesRequest.FromString,
-                    response_serializer=workspace__pb2.ListPackagesResponse.SerializeToString,
+                    request_deserializer=workspace__pb2.ListWorkspacePackagesRequest.FromString,
+                    response_serializer=workspace__pb2.ListWorkspacePackagesResponse.SerializeToString,
             ),
             'CreatePackage': grpc.unary_unary_rpc_method_handler(
                     servicer.CreatePackage,
@@ -144,8 +144,8 @@ class WorkspaceService:
             request,
             target,
             '/rqt2.api.v1.WorkspaceService/ListPackages',
-            workspace__pb2.ListPackagesRequest.SerializeToString,
-            workspace__pb2.ListPackagesResponse.FromString,
+            workspace__pb2.ListWorkspacePackagesRequest.SerializeToString,
+            workspace__pb2.ListWorkspacePackagesResponse.FromString,
             options,
             channel_credentials,
             insecure,
