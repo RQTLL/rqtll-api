@@ -7,7 +7,10 @@ service PackageService {
 }
 
 message ListPackagesRequest {
-    string filter = 1; 
+    string filter = 1;
+    bool show_ros = 2;
+    bool show_python = 3;
+    bool show_rti = 4;
 }
 
 message PackageInfo {
