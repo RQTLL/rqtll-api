@@ -4,6 +4,7 @@ package rqt2.api.v1;
 
 service ROSInstallerService {
   rpc InstallEnvironment (EnvInstallRequest) returns (stream EnvInstallProgress);
+  rpc SetupRepositories (EnvInstallRequest) returns (stream EnvInstallProgress);
 }
 
 message EnvInstallRequest {

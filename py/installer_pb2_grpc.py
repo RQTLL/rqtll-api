@@ -39,6 +39,11 @@ class ROSInstallerServiceStub:
                 request_serializer=installer__pb2.EnvInstallRequest.SerializeToString,
                 response_deserializer=installer__pb2.EnvInstallProgress.FromString,
                 _registered_method=True)
+        self.SetupRepositories = channel.unary_stream(
+                '/rqt2.api.v1.ROSInstallerService/SetupRepositories',
+                request_serializer=installer__pb2.EnvInstallRequest.SerializeToString,
+                response_deserializer=installer__pb2.EnvInstallProgress.FromString,
+                _registered_method=True)
 
 
 class ROSInstallerServiceServicer:
@@ -50,11 +55,22 @@ class ROSInstallerServiceServicer:
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SetupRepositories(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ROSInstallerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'InstallEnvironment': grpc.unary_stream_rpc_method_handler(
                     servicer.InstallEnvironment,
+                    request_deserializer=installer__pb2.EnvInstallRequest.FromString,
+                    response_serializer=installer__pb2.EnvInstallProgress.SerializeToString,
+            ),
+            'SetupRepositories': grpc.unary_stream_rpc_method_handler(
+                    servicer.SetupRepositories,
                     request_deserializer=installer__pb2.EnvInstallRequest.FromString,
                     response_serializer=installer__pb2.EnvInstallProgress.SerializeToString,
             ),
@@ -84,6 +100,33 @@ class ROSInstallerService:
             request,
             target,
             '/rqt2.api.v1.ROSInstallerService/InstallEnvironment',
+            installer__pb2.EnvInstallRequest.SerializeToString,
+            installer__pb2.EnvInstallProgress.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SetupRepositories(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/rqt2.api.v1.ROSInstallerService/SetupRepositories',
             installer__pb2.EnvInstallRequest.SerializeToString,
             installer__pb2.EnvInstallProgress.FromString,
             options,

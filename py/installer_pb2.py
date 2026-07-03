@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0finstaller.proto\x12\x0brqt2.api.v1\"\x13\n\x11\x45nvInstallRequest\"}\n\x12\x45nvInstallProgress\x12\x0f\n\x07step_id\x18\x01 \x01(\t\x12\x10\n\x08log_line\x18\x02 \x01(\t\x12\'\n\x06status\x18\x03 \x01(\x0e\x32\x17.rqt2.api.v1.StepStatus\x12\x1b\n\x13progress_percentage\x18\x04 \x01(\x05*2\n\nStepStatus\x12\x0b\n\x07RUNNING\x10\x00\x12\x0b\n\x07SUCCESS\x10\x01\x12\n\n\x06\x46\x41ILED\x10\x02\x32n\n\x13ROSInstallerService\x12W\n\x12InstallEnvironment\x12\x1e.rqt2.api.v1.EnvInstallRequest\x1a\x1f.rqt2.api.v1.EnvInstallProgress0\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0finstaller.proto\x12\x0brqt2.api.v1\"\x13\n\x11\x45nvInstallRequest\"}\n\x12\x45nvInstallProgress\x12\x0f\n\x07step_id\x18\x01 \x01(\t\x12\x10\n\x08log_line\x18\x02 \x01(\t\x12\'\n\x06status\x18\x03 \x01(\x0e\x32\x17.rqt2.api.v1.StepStatus\x12\x1b\n\x13progress_percentage\x18\x04 \x01(\x05*2\n\nStepStatus\x12\x0b\n\x07RUNNING\x10\x00\x12\x0b\n\x07SUCCESS\x10\x01\x12\n\n\x06\x46\x41ILED\x10\x02\x32\xc6\x01\n\x13ROSInstallerService\x12W\n\x12InstallEnvironment\x12\x1e.rqt2.api.v1.EnvInstallRequest\x1a\x1f.rqt2.api.v1.EnvInstallProgress0\x01\x12V\n\x11SetupRepositories\x12\x1e.rqt2.api.v1.EnvInstallRequest\x1a\x1f.rqt2.api.v1.EnvInstallProgress0\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,6 +37,6 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ENVINSTALLREQUEST']._serialized_end=51
   _globals['_ENVINSTALLPROGRESS']._serialized_start=53
   _globals['_ENVINSTALLPROGRESS']._serialized_end=178
-  _globals['_ROSINSTALLERSERVICE']._serialized_start=232
-  _globals['_ROSINSTALLERSERVICE']._serialized_end=342
+  _globals['_ROSINSTALLERSERVICE']._serialized_start=233
+  _globals['_ROSINSTALLERSERVICE']._serialized_end=431
 # @@protoc_insertion_point(module_scope)
