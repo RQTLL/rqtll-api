@@ -50,6 +50,16 @@ class WorkspaceServiceStub:
                 request_serializer=workspace__pb2.CreatePackageRequest.SerializeToString,
                 response_deserializer=types__pb2.Status.FromString,
                 _registered_method=True)
+        self.CreateWorkspace = channel.unary_unary(
+                '/rqt2.api.v1.WorkspaceService/CreateWorkspace',
+                request_serializer=workspace__pb2.CreateWorkspaceRequest.SerializeToString,
+                response_deserializer=types__pb2.Status.FromString,
+                _registered_method=True)
+        self.CreateNodesAndLaunchers = channel.unary_unary(
+                '/rqt2.api.v1.WorkspaceService/CreateNodesAndLaunchers',
+                request_serializer=workspace__pb2.CreateNodesAndLaunchersRequest.SerializeToString,
+                response_deserializer=types__pb2.Status.FromString,
+                _registered_method=True)
 
 
 class WorkspaceServiceServicer:
@@ -73,6 +83,18 @@ class WorkspaceServiceServicer:
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateWorkspace(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateNodesAndLaunchers(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_WorkspaceServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -89,6 +111,16 @@ def add_WorkspaceServiceServicer_to_server(servicer, server):
             'CreatePackage': grpc.unary_unary_rpc_method_handler(
                     servicer.CreatePackage,
                     request_deserializer=workspace__pb2.CreatePackageRequest.FromString,
+                    response_serializer=types__pb2.Status.SerializeToString,
+            ),
+            'CreateWorkspace': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateWorkspace,
+                    request_deserializer=workspace__pb2.CreateWorkspaceRequest.FromString,
+                    response_serializer=types__pb2.Status.SerializeToString,
+            ),
+            'CreateNodesAndLaunchers': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateNodesAndLaunchers,
+                    request_deserializer=workspace__pb2.CreateNodesAndLaunchersRequest.FromString,
                     response_serializer=types__pb2.Status.SerializeToString,
             ),
     }
@@ -172,6 +204,60 @@ class WorkspaceService:
             target,
             '/rqt2.api.v1.WorkspaceService/CreatePackage',
             workspace__pb2.CreatePackageRequest.SerializeToString,
+            types__pb2.Status.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateWorkspace(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/rqt2.api.v1.WorkspaceService/CreateWorkspace',
+            workspace__pb2.CreateWorkspaceRequest.SerializeToString,
+            types__pb2.Status.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateNodesAndLaunchers(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/rqt2.api.v1.WorkspaceService/CreateNodesAndLaunchers',
+            workspace__pb2.CreateNodesAndLaunchersRequest.SerializeToString,
             types__pb2.Status.FromString,
             options,
             channel_credentials,
