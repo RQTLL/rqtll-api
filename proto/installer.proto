@@ -5,6 +5,7 @@ package rqt2.api.v1;
 service ROSInstallerService {
   rpc InstallEnvironment (EnvInstallRequest) returns (stream EnvInstallProgress);
   rpc SetupRepositories (EnvInstallRequest) returns (stream EnvInstallProgress);
+  rpc ConfigureEnvironment (ConfigureEnvRequest) returns (stream EnvInstallProgress);
 }
 
 message EnvInstallRequest {
@@ -21,4 +22,11 @@ message EnvInstallProgress {
   string log_line = 2;      // Salida directa de la terminal (stdout / stderr)
   StepStatus status = 3;    // Estado del paso actual
   int32 progress_percentage = 4; // Progreso estimado (0-100) para la barra de carga
+}
+
+message ConfigureEnvRequest {
+  bool load_ros_shell = 1;
+  bool config_domain_id = 2;
+  int32 domain_id = 3;
+  string ros_distro = 4;
 }
