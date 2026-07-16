@@ -1,12 +1,12 @@
-# rqt2-api
+# rqtll-api
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/RQT2/rqt2-components/blob/main/assets/branding/logo-main-light.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/RQT2/rqt2-components/blob/main/assets/branding/logo-main-dark.svg">
-  <img alt="RQT2 Logo" src="https://github.com/RQT2/rqt2-components/blob/main/assets/branding/logo-main-color.svg" width="50px">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/RQTLL/rqtll-components/blob/main/assets/branding/logo-main-light.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/RQTLL/rqtll-components/blob/main/assets/branding/logo-main-dark.svg">
+  <img alt="RQTLL Logo" src="https://github.com/RQTLL/rqtll-components/blob/main/assets/branding/logo-main-color.svg" width="50px">
 </picture>
 
-API gRPC/protobuf que define los contratos entre la IDE (`rqt2-ide` / frontends PySide6) y los backends (`rqt2-rcl-utils`, agentes, daemons) del ecosistema RQT2.
+API gRPC/protobuf que define los contratos entre la IDE (`rqtll-ide` / frontends PySide6) y los backends (`rqtll-rcl-utils`, agentes, daemons) del ecosistema RQTLL.
 
 ## Table of Contents
 - [Quickstart](#quickstart)
@@ -25,35 +25,35 @@ Este crate genera los stubs Rust (clientes y servidores) a partir de los `.proto
 - Rust (stable, 1.70+ recommended)
 - `protoc` (Protocol Buffers compiler)
 
-### Consumir rqt2-api
+### Consumir rqtll-api
 
 Este repositorio puede ser consumido por otros módulos de dos maneras seguras: 
 
 ### Dependencia Git en `Cargo.toml`
 
 ```toml
-rqt2_api = { git = "https://github.com/RQT2/rqt2-api.git", rev = "<commit-sha>" }
+rqtll_api = { git = "https://github.com/RQTLL/rqtll-api.git", rev = "<commit-sha>" }
 ```
 
 ### Git Submodule
 
 ```bash
 # Añadir como submodule
-git submodule add https://github.com/RQT2/rqt2-api.git external/rqt2-api
+git submodule add https://github.com/RQTLL/rqtll-api.git external/rqtll-api
 git submodule update --init --recursive
 ```
 
 #### Modificación de `Cargo.toml`
 
 ```toml
-rqt2_api = { path = "external/rqt2-api" }
+rqtll_api = { path = "external/rqtll-api" }
 ```
 
 ### Build / Generar stubs
 
 ```bash
 # Desde la raíz del crate
-cd rqt2-api
+cd rqtll-api
 cargo build
 ```
 
@@ -61,7 +61,7 @@ El comando anterior invocará `build.rs` que compila todos los `.proto` usando `
 
 ### Uso desde Rust
 
-`rqt2_api::` contiene los módulos generados; los servicios se encuentran bajo `rqt2_api::rqt2.api.v1` (incluidos por `tonic::include_proto!("rqt2.api.v1")`).
+`rqtll_api::` contiene los módulos generados; los servicios se encuentran bajo `rqtll_api::rqtll.api.v1` (incluidos por `tonic::include_proto!("rqtll.api.v1")`).
 
 ## Estructura del Repositorio
 
