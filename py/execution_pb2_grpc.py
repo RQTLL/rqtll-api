@@ -36,17 +36,17 @@ class ExecutionServiceStub:
             channel: A grpc.Channel.
         """
         self.Run = channel.unary_stream(
-                '/rqt2.api.v1.ExecutionService/Run',
+                '/rqtll.api.v1.ExecutionService/Run',
                 request_serializer=execution__pb2.RunRequest.SerializeToString,
                 response_deserializer=execution__pb2.ExecEvent.FromString,
                 _registered_method=True)
         self.Stop = channel.unary_unary(
-                '/rqt2.api.v1.ExecutionService/Stop',
+                '/rqtll.api.v1.ExecutionService/Stop',
                 request_serializer=execution__pb2.StopRequest.SerializeToString,
                 response_deserializer=types__pb2.Status.FromString,
                 _registered_method=True)
         self.ListLaunchFiles = channel.unary_unary(
-                '/rqt2.api.v1.ExecutionService/ListLaunchFiles',
+                '/rqtll.api.v1.ExecutionService/ListLaunchFiles',
                 request_serializer=types__pb2.Empty.SerializeToString,
                 response_deserializer=execution__pb2.LaunchListResponse.FromString,
                 _registered_method=True)
@@ -93,9 +93,9 @@ def add_ExecutionServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'rqt2.api.v1.ExecutionService', rpc_method_handlers)
+            'rqtll.api.v1.ExecutionService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('rqt2.api.v1.ExecutionService', rpc_method_handlers)
+    server.add_registered_method_handlers('rqtll.api.v1.ExecutionService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -116,7 +116,7 @@ class ExecutionService:
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/rqt2.api.v1.ExecutionService/Run',
+            '/rqtll.api.v1.ExecutionService/Run',
             execution__pb2.RunRequest.SerializeToString,
             execution__pb2.ExecEvent.FromString,
             options,
@@ -143,7 +143,7 @@ class ExecutionService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.ExecutionService/Stop',
+            '/rqtll.api.v1.ExecutionService/Stop',
             execution__pb2.StopRequest.SerializeToString,
             types__pb2.Status.FromString,
             options,
@@ -170,7 +170,7 @@ class ExecutionService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.ExecutionService/ListLaunchFiles',
+            '/rqtll.api.v1.ExecutionService/ListLaunchFiles',
             types__pb2.Empty.SerializeToString,
             execution__pb2.LaunchListResponse.FromString,
             options,

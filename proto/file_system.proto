@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package rqt2.api.v1;
+package rqtll.api.v1;
 
 import "types.proto";
 import "google/protobuf/timestamp.proto";

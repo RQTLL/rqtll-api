@@ -36,17 +36,17 @@ class IntrospectionServiceStub:
             channel: A grpc.Channel.
         """
         self.ListNodes = channel.unary_unary(
-                '/rqt2.api.v1.IntrospectionService/ListNodes',
+                '/rqtll.api.v1.IntrospectionService/ListNodes',
                 request_serializer=types__pb2.Empty.SerializeToString,
                 response_deserializer=introspection__pb2.ListNodesResponse.FromString,
                 _registered_method=True)
         self.ListTopics = channel.unary_unary(
-                '/rqt2.api.v1.IntrospectionService/ListTopics',
+                '/rqtll.api.v1.IntrospectionService/ListTopics',
                 request_serializer=types__pb2.Empty.SerializeToString,
                 response_deserializer=introspection__pb2.ListTopicsResponse.FromString,
                 _registered_method=True)
         self.WatchGraph = channel.unary_stream(
-                '/rqt2.api.v1.IntrospectionService/WatchGraph',
+                '/rqtll.api.v1.IntrospectionService/WatchGraph',
                 request_serializer=introspection__pb2.IntrospectionFilter.SerializeToString,
                 response_deserializer=introspection__pb2.GraphEvent.FromString,
                 _registered_method=True)
@@ -93,9 +93,9 @@ def add_IntrospectionServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'rqt2.api.v1.IntrospectionService', rpc_method_handlers)
+            'rqtll.api.v1.IntrospectionService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('rqt2.api.v1.IntrospectionService', rpc_method_handlers)
+    server.add_registered_method_handlers('rqtll.api.v1.IntrospectionService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -116,7 +116,7 @@ class IntrospectionService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.IntrospectionService/ListNodes',
+            '/rqtll.api.v1.IntrospectionService/ListNodes',
             types__pb2.Empty.SerializeToString,
             introspection__pb2.ListNodesResponse.FromString,
             options,
@@ -143,7 +143,7 @@ class IntrospectionService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.IntrospectionService/ListTopics',
+            '/rqtll.api.v1.IntrospectionService/ListTopics',
             types__pb2.Empty.SerializeToString,
             introspection__pb2.ListTopicsResponse.FromString,
             options,
@@ -170,7 +170,7 @@ class IntrospectionService:
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/rqt2.api.v1.IntrospectionService/WatchGraph',
+            '/rqtll.api.v1.IntrospectionService/WatchGraph',
             introspection__pb2.IntrospectionFilter.SerializeToString,
             introspection__pb2.GraphEvent.FromString,
             options,

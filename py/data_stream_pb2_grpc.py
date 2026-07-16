@@ -36,22 +36,22 @@ class DataStreamServiceStub:
             channel: A grpc.Channel.
         """
         self.Subscribe = channel.unary_stream(
-                '/rqt2.api.v1.DataStreamService/Subscribe',
+                '/rqtll.api.v1.DataStreamService/Subscribe',
                 request_serializer=data__stream__pb2.SubscribeRequest.SerializeToString,
                 response_deserializer=data__stream__pb2.TopicMessage.FromString,
                 _registered_method=True)
         self.Publish = channel.unary_unary(
-                '/rqt2.api.v1.DataStreamService/Publish',
+                '/rqtll.api.v1.DataStreamService/Publish',
                 request_serializer=data__stream__pb2.PublishRequest.SerializeToString,
                 response_deserializer=types__pb2.Status.FromString,
                 _registered_method=True)
         self.Record = channel.unary_stream(
-                '/rqt2.api.v1.DataStreamService/Record',
+                '/rqtll.api.v1.DataStreamService/Record',
                 request_serializer=data__stream__pb2.RecordRequest.SerializeToString,
                 response_deserializer=data__stream__pb2.RecordEvent.FromString,
                 _registered_method=True)
         self.Play = channel.unary_stream(
-                '/rqt2.api.v1.DataStreamService/Play',
+                '/rqtll.api.v1.DataStreamService/Play',
                 request_serializer=data__stream__pb2.PlayRequest.SerializeToString,
                 response_deserializer=data__stream__pb2.PlaybackEvent.FromString,
                 _registered_method=True)
@@ -109,9 +109,9 @@ def add_DataStreamServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'rqt2.api.v1.DataStreamService', rpc_method_handlers)
+            'rqtll.api.v1.DataStreamService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('rqt2.api.v1.DataStreamService', rpc_method_handlers)
+    server.add_registered_method_handlers('rqtll.api.v1.DataStreamService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -132,7 +132,7 @@ class DataStreamService:
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/rqt2.api.v1.DataStreamService/Subscribe',
+            '/rqtll.api.v1.DataStreamService/Subscribe',
             data__stream__pb2.SubscribeRequest.SerializeToString,
             data__stream__pb2.TopicMessage.FromString,
             options,
@@ -159,7 +159,7 @@ class DataStreamService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.DataStreamService/Publish',
+            '/rqtll.api.v1.DataStreamService/Publish',
             data__stream__pb2.PublishRequest.SerializeToString,
             types__pb2.Status.FromString,
             options,
@@ -186,7 +186,7 @@ class DataStreamService:
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/rqt2.api.v1.DataStreamService/Record',
+            '/rqtll.api.v1.DataStreamService/Record',
             data__stream__pb2.RecordRequest.SerializeToString,
             data__stream__pb2.RecordEvent.FromString,
             options,
@@ -213,7 +213,7 @@ class DataStreamService:
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/rqt2.api.v1.DataStreamService/Play',
+            '/rqtll.api.v1.DataStreamService/Play',
             data__stream__pb2.PlayRequest.SerializeToString,
             data__stream__pb2.PlaybackEvent.FromString,
             options,

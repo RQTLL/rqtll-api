@@ -36,17 +36,17 @@ class BuildServiceStub:
             channel: A grpc.Channel.
         """
         self.BuildWorkspace = channel.unary_stream(
-                '/rqt2.api.v1.BuildService/BuildWorkspace',
+                '/rqtll.api.v1.BuildService/BuildWorkspace',
                 request_serializer=build__pb2.BuildRequest.SerializeToString,
                 response_deserializer=build__pb2.BuildEvent.FromString,
                 _registered_method=True)
         self.CleanWorkspace = channel.unary_unary(
-                '/rqt2.api.v1.BuildService/CleanWorkspace',
+                '/rqtll.api.v1.BuildService/CleanWorkspace',
                 request_serializer=build__pb2.CleanRequest.SerializeToString,
                 response_deserializer=types__pb2.Status.FromString,
                 _registered_method=True)
         self.LoadOverlay = channel.unary_unary(
-                '/rqt2.api.v1.BuildService/LoadOverlay',
+                '/rqtll.api.v1.BuildService/LoadOverlay',
                 request_serializer=build__pb2.LoadRequest.SerializeToString,
                 response_deserializer=types__pb2.Status.FromString,
                 _registered_method=True)
@@ -93,9 +93,9 @@ def add_BuildServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'rqt2.api.v1.BuildService', rpc_method_handlers)
+            'rqtll.api.v1.BuildService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('rqt2.api.v1.BuildService', rpc_method_handlers)
+    server.add_registered_method_handlers('rqtll.api.v1.BuildService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -116,7 +116,7 @@ class BuildService:
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/rqt2.api.v1.BuildService/BuildWorkspace',
+            '/rqtll.api.v1.BuildService/BuildWorkspace',
             build__pb2.BuildRequest.SerializeToString,
             build__pb2.BuildEvent.FromString,
             options,
@@ -143,7 +143,7 @@ class BuildService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.BuildService/CleanWorkspace',
+            '/rqtll.api.v1.BuildService/CleanWorkspace',
             build__pb2.CleanRequest.SerializeToString,
             types__pb2.Status.FromString,
             options,
@@ -170,7 +170,7 @@ class BuildService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.BuildService/LoadOverlay',
+            '/rqtll.api.v1.BuildService/LoadOverlay',
             build__pb2.LoadRequest.SerializeToString,
             types__pb2.Status.FromString,
             options,

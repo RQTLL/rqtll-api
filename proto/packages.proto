@@ -1,5 +1,5 @@
 syntax = "proto3";
-package rqt2.api.v1;
+package rqtll.api.v1;
 
 service PackageService {
     rpc ListAvailablePackages (ListPackagesRequest) returns (stream PackageInfo);

@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 import types_pb2 as types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x62uild.proto\x12\x0brqt2.api.v1\x1a\x0btypes.proto\"\xc3\x01\n\x0c\x42uildRequest\x12\x16\n\x0eworkspace_path\x18\x01 \x01(\t\x12\x10\n\x08packages\x18\x02 \x03(\t\x12\x13\n\x0b\x63olcon_args\x18\x03 \x03(\t\x12\x17\n\x0fsymlink_install\x18\x04 \x01(\x08\x12/\n\x03\x65nv\x18\x05 \x03(\x0b\x32\".rqt2.api.v1.BuildRequest.EnvEntry\x1a*\n\x08\x45nvEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x96\x01\n\nBuildEvent\x12$\n\x03log\x18\x01 \x01(\x0b\x32\x15.rqt2.api.v1.LogEntryH\x00\x12%\n\x06status\x18\x02 \x01(\x0b\x32\x13.rqt2.api.v1.StatusH\x00\x12\x19\n\x0f\x63urrent_package\x18\x03 \x01(\tH\x00\x12\x1a\n\x10progress_percent\x18\x04 \x01(\x01H\x00\x42\x04\n\x02\x65v\"M\n\x0c\x43leanRequest\x12\x13\n\x0b\x63lean_build\x18\x01 \x01(\x08\x12\x15\n\rclean_install\x18\x02 \x01(\x08\x12\x11\n\tclean_log\x18\x03 \x01(\x08\"2\n\x0bLoadRequest\x12\r\n\x05shell\x18\x01 \x01(\t\x12\x14\n\x0coverlay_path\x18\x02 \x01(\t2\xd6\x01\n\x0c\x42uildService\x12\x46\n\x0e\x42uildWorkspace\x12\x19.rqt2.api.v1.BuildRequest\x1a\x17.rqt2.api.v1.BuildEvent0\x01\x12@\n\x0e\x43leanWorkspace\x12\x19.rqt2.api.v1.CleanRequest\x1a\x13.rqt2.api.v1.Status\x12<\n\x0bLoadOverlay\x12\x18.rqt2.api.v1.LoadRequest\x1a\x13.rqt2.api.v1.Statusb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x62uild.proto\x12\x0crqtll.api.v1\x1a\x0btypes.proto\"\xc4\x01\n\x0c\x42uildRequest\x12\x16\n\x0eworkspace_path\x18\x01 \x01(\t\x12\x10\n\x08packages\x18\x02 \x03(\t\x12\x13\n\x0b\x63olcon_args\x18\x03 \x03(\t\x12\x17\n\x0fsymlink_install\x18\x04 \x01(\x08\x12\x30\n\x03\x65nv\x18\x05 \x03(\x0b\x32#.rqtll.api.v1.BuildRequest.EnvEntry\x1a*\n\x08\x45nvEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x98\x01\n\nBuildEvent\x12%\n\x03log\x18\x01 \x01(\x0b\x32\x16.rqtll.api.v1.LogEntryH\x00\x12&\n\x06status\x18\x02 \x01(\x0b\x32\x14.rqtll.api.v1.StatusH\x00\x12\x19\n\x0f\x63urrent_package\x18\x03 \x01(\tH\x00\x12\x1a\n\x10progress_percent\x18\x04 \x01(\x01H\x00\x42\x04\n\x02\x65v\"M\n\x0c\x43leanRequest\x12\x13\n\x0b\x63lean_build\x18\x01 \x01(\x08\x12\x15\n\rclean_install\x18\x02 \x01(\x08\x12\x11\n\tclean_log\x18\x03 \x01(\x08\"2\n\x0bLoadRequest\x12\r\n\x05shell\x18\x01 \x01(\t\x12\x14\n\x0coverlay_path\x18\x02 \x01(\t2\xdc\x01\n\x0c\x42uildService\x12H\n\x0e\x42uildWorkspace\x12\x1a.rqtll.api.v1.BuildRequest\x1a\x18.rqtll.api.v1.BuildEvent0\x01\x12\x42\n\x0e\x43leanWorkspace\x12\x1a.rqtll.api.v1.CleanRequest\x1a\x14.rqtll.api.v1.Status\x12>\n\x0bLoadOverlay\x12\x19.rqtll.api.v1.LoadRequest\x1a\x14.rqtll.api.v1.Statusb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,16 +34,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
   _globals['_BUILDREQUEST_ENVENTRY']._loaded_options = None
   _globals['_BUILDREQUEST_ENVENTRY']._serialized_options = b'8\001'
-  _globals['_BUILDREQUEST']._serialized_start=42
-  _globals['_BUILDREQUEST']._serialized_end=237
-  _globals['_BUILDREQUEST_ENVENTRY']._serialized_start=195
-  _globals['_BUILDREQUEST_ENVENTRY']._serialized_end=237
-  _globals['_BUILDEVENT']._serialized_start=240
-  _globals['_BUILDEVENT']._serialized_end=390
-  _globals['_CLEANREQUEST']._serialized_start=392
-  _globals['_CLEANREQUEST']._serialized_end=469
-  _globals['_LOADREQUEST']._serialized_start=471
-  _globals['_LOADREQUEST']._serialized_end=521
-  _globals['_BUILDSERVICE']._serialized_start=524
-  _globals['_BUILDSERVICE']._serialized_end=738
+  _globals['_BUILDREQUEST']._serialized_start=43
+  _globals['_BUILDREQUEST']._serialized_end=239
+  _globals['_BUILDREQUEST_ENVENTRY']._serialized_start=197
+  _globals['_BUILDREQUEST_ENVENTRY']._serialized_end=239
+  _globals['_BUILDEVENT']._serialized_start=242
+  _globals['_BUILDEVENT']._serialized_end=394
+  _globals['_CLEANREQUEST']._serialized_start=396
+  _globals['_CLEANREQUEST']._serialized_end=473
+  _globals['_LOADREQUEST']._serialized_start=475
+  _globals['_LOADREQUEST']._serialized_end=525
+  _globals['_BUILDSERVICE']._serialized_start=528
+  _globals['_BUILDSERVICE']._serialized_end=748
 # @@protoc_insertion_point(module_scope)

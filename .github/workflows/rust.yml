@@ -24,6 +24,6 @@ jobs:
           toolchain: stable
           profile: minimal
 
-      - name: Build rqt2-api
+      - name: Build rqtll-api
         run: |
           cargo build --verbose

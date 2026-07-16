@@ -35,12 +35,12 @@ class CloneWorkspaceServiceStub:
             channel: A grpc.Channel.
         """
         self.CloneWorkspace = channel.unary_stream(
-                '/rqt2.api.v1.CloneWorkspaceService/CloneWorkspace',
+                '/rqtll.api.v1.CloneWorkspaceService/CloneWorkspace',
                 request_serializer=clone__ws__pb2.CloneWorkspaceRequest.SerializeToString,
                 response_deserializer=clone__ws__pb2.CloneWorkspaceProgress.FromString,
                 _registered_method=True)
         self.SetCurrentTargetDir = channel.unary_unary(
-                '/rqt2.api.v1.CloneWorkspaceService/SetCurrentTargetDir',
+                '/rqtll.api.v1.CloneWorkspaceService/SetCurrentTargetDir',
                 request_serializer=clone__ws__pb2.SetCurrentTargetDirRequest.SerializeToString,
                 response_deserializer=clone__ws__pb2.SetCurrentTargetDirResponse.FromString,
                 _registered_method=True)
@@ -76,9 +76,9 @@ def add_CloneWorkspaceServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'rqt2.api.v1.CloneWorkspaceService', rpc_method_handlers)
+            'rqtll.api.v1.CloneWorkspaceService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('rqt2.api.v1.CloneWorkspaceService', rpc_method_handlers)
+    server.add_registered_method_handlers('rqtll.api.v1.CloneWorkspaceService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -99,7 +99,7 @@ class CloneWorkspaceService:
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/rqt2.api.v1.CloneWorkspaceService/CloneWorkspace',
+            '/rqtll.api.v1.CloneWorkspaceService/CloneWorkspace',
             clone__ws__pb2.CloneWorkspaceRequest.SerializeToString,
             clone__ws__pb2.CloneWorkspaceProgress.FromString,
             options,
@@ -126,7 +126,7 @@ class CloneWorkspaceService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.CloneWorkspaceService/SetCurrentTargetDir',
+            '/rqtll.api.v1.CloneWorkspaceService/SetCurrentTargetDir',
             clone__ws__pb2.SetCurrentTargetDirRequest.SerializeToString,
             clone__ws__pb2.SetCurrentTargetDirResponse.FromString,
             options,

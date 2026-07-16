@@ -36,22 +36,22 @@ class SettingsServiceStub:
             channel: A grpc.Channel.
         """
         self.Get = channel.unary_unary(
-                '/rqt2.api.v1.SettingsService/Get',
+                '/rqtll.api.v1.SettingsService/Get',
                 request_serializer=settings__pb2.GetSettingsRequest.SerializeToString,
                 response_deserializer=settings__pb2.SettingResponse.FromString,
                 _registered_method=True)
         self.Set = channel.unary_unary(
-                '/rqt2.api.v1.SettingsService/Set',
+                '/rqtll.api.v1.SettingsService/Set',
                 request_serializer=settings__pb2.SetSettingsRequest.SerializeToString,
                 response_deserializer=types__pb2.Status.FromString,
                 _registered_method=True)
         self.List = channel.unary_unary(
-                '/rqt2.api.v1.SettingsService/List',
+                '/rqtll.api.v1.SettingsService/List',
                 request_serializer=settings__pb2.ListSettingsRequest.SerializeToString,
                 response_deserializer=settings__pb2.ListSettingsResponse.FromString,
                 _registered_method=True)
         self.Watch = channel.unary_stream(
-                '/rqt2.api.v1.SettingsService/Watch',
+                '/rqtll.api.v1.SettingsService/Watch',
                 request_serializer=settings__pb2.WatchSettingsRequest.SerializeToString,
                 response_deserializer=settings__pb2.SettingEvent.FromString,
                 _registered_method=True)
@@ -109,9 +109,9 @@ def add_SettingsServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'rqt2.api.v1.SettingsService', rpc_method_handlers)
+            'rqtll.api.v1.SettingsService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('rqt2.api.v1.SettingsService', rpc_method_handlers)
+    server.add_registered_method_handlers('rqtll.api.v1.SettingsService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -132,7 +132,7 @@ class SettingsService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.SettingsService/Get',
+            '/rqtll.api.v1.SettingsService/Get',
             settings__pb2.GetSettingsRequest.SerializeToString,
             settings__pb2.SettingResponse.FromString,
             options,
@@ -159,7 +159,7 @@ class SettingsService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.SettingsService/Set',
+            '/rqtll.api.v1.SettingsService/Set',
             settings__pb2.SetSettingsRequest.SerializeToString,
             types__pb2.Status.FromString,
             options,
@@ -186,7 +186,7 @@ class SettingsService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.SettingsService/List',
+            '/rqtll.api.v1.SettingsService/List',
             settings__pb2.ListSettingsRequest.SerializeToString,
             settings__pb2.ListSettingsResponse.FromString,
             options,
@@ -213,7 +213,7 @@ class SettingsService:
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/rqt2.api.v1.SettingsService/Watch',
+            '/rqtll.api.v1.SettingsService/Watch',
             settings__pb2.WatchSettingsRequest.SerializeToString,
             settings__pb2.SettingEvent.FromString,
             options,

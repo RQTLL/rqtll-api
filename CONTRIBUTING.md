@@ -1,6 +1,6 @@
-# Contribuyendo a rqt2-api
+# Contribuyendo a rqtll-api
 
-Gracias por contribuir a los contratos y definiciones de API de RQT2. Este repositorio define los `.proto` que enlazan frontends (IDE) y backends.
+Gracias por contribuir a los contratos y definiciones de API de RQTLL. Este repositorio define los `.proto` que enlazan frontends (IDE) y backends.
 
 ## Flujo de contribución
 
@@ -21,7 +21,7 @@ Gracias por contribuir a los contratos y definiciones de API de RQT2. Este repos
 ## Generar y probar localmente
 
 ```bash
-cd rqt2-api
+cd rqtll-api
 # compila y genera stubs con tonic_build
 cargo build
 ```
@@ -29,7 +29,7 @@ cargo build
 ## Revisión de PR
 
 - Incluye ejemplos de cliente/servidor mínimos si el cambio añade un servicio nuevo.
-- Marcar claramente cualquier cambio que requiera acciones en `rqt2-rcl-utils` o en la IDE.
+- Marcar claramente cualquier cambio que requiera acciones en `rqtll-service` o en la IDE.
 
 ## Estilo y formato
 
@@ -37,4 +37,4 @@ cargo build
 
 ## Comunicación
 
-Para dudas, propone en el *issue* o contacta a los mantenedores en las discusiones del repositorio principal [.github](https://github.com/RQT2/.github/).
+Para dudas, propone en el *issue* o contacta a los mantenedores en las discusiones del repositorio principal [.github](https://github.com/RQTLL/.github/).

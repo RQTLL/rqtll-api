@@ -36,37 +36,37 @@ class FileServiceStub:
             channel: A grpc.Channel.
         """
         self.Stat = channel.unary_unary(
-                '/rqt2.api.v1.FileService/Stat',
+                '/rqtll.api.v1.FileService/Stat',
                 request_serializer=file__system__pb2.ReadFileRequest.SerializeToString,
                 response_deserializer=file__system__pb2.FileInfo.FromString,
                 _registered_method=True)
         self.Read = channel.unary_unary(
-                '/rqt2.api.v1.FileService/Read',
+                '/rqtll.api.v1.FileService/Read',
                 request_serializer=file__system__pb2.ReadFileRequest.SerializeToString,
                 response_deserializer=file__system__pb2.FileContent.FromString,
                 _registered_method=True)
         self.Write = channel.unary_unary(
-                '/rqt2.api.v1.FileService/Write',
+                '/rqtll.api.v1.FileService/Write',
                 request_serializer=file__system__pb2.WriteFileRequest.SerializeToString,
                 response_deserializer=types__pb2.Status.FromString,
                 _registered_method=True)
         self.Delete = channel.unary_unary(
-                '/rqt2.api.v1.FileService/Delete',
+                '/rqtll.api.v1.FileService/Delete',
                 request_serializer=file__system__pb2.ReadFileRequest.SerializeToString,
                 response_deserializer=types__pb2.Status.FromString,
                 _registered_method=True)
         self.Rename = channel.unary_unary(
-                '/rqt2.api.v1.FileService/Rename',
+                '/rqtll.api.v1.FileService/Rename',
                 request_serializer=file__system__pb2.RenameRequest.SerializeToString,
                 response_deserializer=types__pb2.Status.FromString,
                 _registered_method=True)
         self.List = channel.unary_unary(
-                '/rqt2.api.v1.FileService/List',
+                '/rqtll.api.v1.FileService/List',
                 request_serializer=file__system__pb2.PathRequest.SerializeToString,
                 response_deserializer=file__system__pb2.ListFilesResponse.FromString,
                 _registered_method=True)
         self.Watch = channel.unary_stream(
-                '/rqt2.api.v1.FileService/Watch',
+                '/rqtll.api.v1.FileService/Watch',
                 request_serializer=file__system__pb2.PathRequest.SerializeToString,
                 response_deserializer=file__system__pb2.FileEvent.FromString,
                 _registered_method=True)
@@ -157,9 +157,9 @@ def add_FileServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'rqt2.api.v1.FileService', rpc_method_handlers)
+            'rqtll.api.v1.FileService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('rqt2.api.v1.FileService', rpc_method_handlers)
+    server.add_registered_method_handlers('rqtll.api.v1.FileService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -180,7 +180,7 @@ class FileService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.FileService/Stat',
+            '/rqtll.api.v1.FileService/Stat',
             file__system__pb2.ReadFileRequest.SerializeToString,
             file__system__pb2.FileInfo.FromString,
             options,
@@ -207,7 +207,7 @@ class FileService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.FileService/Read',
+            '/rqtll.api.v1.FileService/Read',
             file__system__pb2.ReadFileRequest.SerializeToString,
             file__system__pb2.FileContent.FromString,
             options,
@@ -234,7 +234,7 @@ class FileService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.FileService/Write',
+            '/rqtll.api.v1.FileService/Write',
             file__system__pb2.WriteFileRequest.SerializeToString,
             types__pb2.Status.FromString,
             options,
@@ -261,7 +261,7 @@ class FileService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.FileService/Delete',
+            '/rqtll.api.v1.FileService/Delete',
             file__system__pb2.ReadFileRequest.SerializeToString,
             types__pb2.Status.FromString,
             options,
@@ -288,7 +288,7 @@ class FileService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.FileService/Rename',
+            '/rqtll.api.v1.FileService/Rename',
             file__system__pb2.RenameRequest.SerializeToString,
             types__pb2.Status.FromString,
             options,
@@ -315,7 +315,7 @@ class FileService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.FileService/List',
+            '/rqtll.api.v1.FileService/List',
             file__system__pb2.PathRequest.SerializeToString,
             file__system__pb2.ListFilesResponse.FromString,
             options,
@@ -342,7 +342,7 @@ class FileService:
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/rqt2.api.v1.FileService/Watch',
+            '/rqtll.api.v1.FileService/Watch',
             file__system__pb2.PathRequest.SerializeToString,
             file__system__pb2.FileEvent.FromString,
             options,

@@ -25,7 +25,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     tonic_build::configure()
         .build_server(true)
         .build_client(true)
-        .file_descriptor_set_path(out_dir.join("rqt2_descriptor.bin"))
+        .file_descriptor_set_path(out_dir.join("rqtll_descriptor.bin"))
         .compile(proto_files, proto_dirs)?;
 
     Ok(())

@@ -1,6 +1,6 @@
 # Security Policy
 
-Si encuentras una vulnerabilidad de seguridad en el código que forma parte de `rqt2-api` por favor reportalo siguiendo los siguientes pasos.
+Si encuentras una vulnerabilidad de seguridad en el código que forma parte de `rqtll-api` por favor reportalo siguiendo los siguientes pasos.
 
 ## Reporte responsable
 
@@ -24,7 +24,7 @@ Si encuentras una vulnerabilidad de seguridad en el código que forma parte de `
 
 En conjunto con el reportante; publicaremos los detalles una vez que la mayoría de los usuarios puedan actualizar a una versión segura.
 
-## Políticas de seguridad específicas para rqt2-api
+## Políticas de seguridad específicas para rqtll-api
 
 - En `TerminalService`, asegurar control de sesiones, evitar inyección de comandos en parámetros que no sean datos de entrada de PTY.  
 - En `SecurityService`, nunca enviar contraseñas en texto plano por canales inseguros; preferir mecanismos de autenticación basados en tokens y transportar por TLS.

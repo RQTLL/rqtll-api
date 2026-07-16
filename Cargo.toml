@@ -1,5 +1,5 @@
 [package]
-name = "rqt2_api"
+name = "rqtll_api"
 version = "1.0.0"
 edition = "2021"
 

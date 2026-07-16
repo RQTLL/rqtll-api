@@ -24,21 +24,21 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0e\x63lone_ws.proto\x12\x0brqt2.api.v1\"\x7f\n\x15\x43loneWorkspaceRequest\x12\x16\n\x0erepository_url\x18\x01 \x01(\t\x12\x17\n\x0f\x64\x65stination_dir\x18\x02 \x01(\t\x12\x16\n\x0eworkspace_name\x18\x03 \x01(\t\x12\x0e\n\x06\x62ranch\x18\x04 \x01(\t\x12\r\n\x05\x64\x65pth\x18\x05 \x01(\r\"`\n\x16\x43loneWorkspaceProgress\x12\x10\n\x08log_line\x18\x01 \x01(\t\x12\x10\n\x08progress\x18\x02 \x01(\x02\x12\x11\n\tcompleted\x18\x03 \x01(\x08\x12\x0f\n\x07success\x18\x04 \x01(\x08\"0\n\x1aSetCurrentTargetDirRequest\x12\x12\n\ntarget_dir\x18\x01 \x01(\t\":\n\x1bSetCurrentTargetDirResponse\x12\n\n\x02ok\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t2\xde\x01\n\x15\x43loneWorkspaceService\x12[\n\x0e\x43loneWorkspace\x12\".rqt2.api.v1.CloneWorkspaceRequest\x1a#.rqt2.api.v1.CloneWorkspaceProgress0\x01\x12h\n\x13SetCurrentTargetDir\x12\'.rqt2.api.v1.SetCurrentTargetDirRequest\x1a(.rqt2.api.v1.SetCurrentTargetDirResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0e\x63lone_ws.proto\x12\x0crqtll.api.v1\"\x7f\n\x15\x43loneWorkspaceRequest\x12\x16\n\x0erepository_url\x18\x01 \x01(\t\x12\x17\n\x0f\x64\x65stination_dir\x18\x02 \x01(\t\x12\x16\n\x0eworkspace_name\x18\x03 \x01(\t\x12\x0e\n\x06\x62ranch\x18\x04 \x01(\t\x12\r\n\x05\x64\x65pth\x18\x05 \x01(\r\"`\n\x16\x43loneWorkspaceProgress\x12\x10\n\x08log_line\x18\x01 \x01(\t\x12\x10\n\x08progress\x18\x02 \x01(\x02\x12\x11\n\tcompleted\x18\x03 \x01(\x08\x12\x0f\n\x07success\x18\x04 \x01(\x08\"0\n\x1aSetCurrentTargetDirRequest\x12\x12\n\ntarget_dir\x18\x01 \x01(\t\":\n\x1bSetCurrentTargetDirResponse\x12\n\n\x02ok\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t2\xe2\x01\n\x15\x43loneWorkspaceService\x12]\n\x0e\x43loneWorkspace\x12#.rqtll.api.v1.CloneWorkspaceRequest\x1a$.rqtll.api.v1.CloneWorkspaceProgress0\x01\x12j\n\x13SetCurrentTargetDir\x12(.rqtll.api.v1.SetCurrentTargetDirRequest\x1a).rqtll.api.v1.SetCurrentTargetDirResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'clone_ws_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_CLONEWORKSPACEREQUEST']._serialized_start=31
-  _globals['_CLONEWORKSPACEREQUEST']._serialized_end=158
-  _globals['_CLONEWORKSPACEPROGRESS']._serialized_start=160
-  _globals['_CLONEWORKSPACEPROGRESS']._serialized_end=256
-  _globals['_SETCURRENTTARGETDIRREQUEST']._serialized_start=258
-  _globals['_SETCURRENTTARGETDIRREQUEST']._serialized_end=306
-  _globals['_SETCURRENTTARGETDIRRESPONSE']._serialized_start=308
-  _globals['_SETCURRENTTARGETDIRRESPONSE']._serialized_end=366
-  _globals['_CLONEWORKSPACESERVICE']._serialized_start=369
-  _globals['_CLONEWORKSPACESERVICE']._serialized_end=591
+  _globals['_CLONEWORKSPACEREQUEST']._serialized_start=32
+  _globals['_CLONEWORKSPACEREQUEST']._serialized_end=159
+  _globals['_CLONEWORKSPACEPROGRESS']._serialized_start=161
+  _globals['_CLONEWORKSPACEPROGRESS']._serialized_end=257
+  _globals['_SETCURRENTTARGETDIRREQUEST']._serialized_start=259
+  _globals['_SETCURRENTTARGETDIRREQUEST']._serialized_end=307
+  _globals['_SETCURRENTTARGETDIRRESPONSE']._serialized_start=309
+  _globals['_SETCURRENTTARGETDIRRESPONSE']._serialized_end=367
+  _globals['_CLONEWORKSPACESERVICE']._serialized_start=370
+  _globals['_CLONEWORKSPACESERVICE']._serialized_end=596
 # @@protoc_insertion_point(module_scope)

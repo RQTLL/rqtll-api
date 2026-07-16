@@ -35,12 +35,12 @@ class SecurityServiceStub:
             channel: A grpc.Channel.
         """
         self.Authenticate = channel.unary_unary(
-                '/rqt2.api.v1.SecurityService/Authenticate',
+                '/rqtll.api.v1.SecurityService/Authenticate',
                 request_serializer=security__pb2.AuthRequest.SerializeToString,
                 response_deserializer=security__pb2.AuthResponse.FromString,
                 _registered_method=True)
         self.RequestNodeCertificate = channel.unary_unary(
-                '/rqt2.api.v1.SecurityService/RequestNodeCertificate',
+                '/rqtll.api.v1.SecurityService/RequestNodeCertificate',
                 request_serializer=security__pb2.CertRequest.SerializeToString,
                 response_deserializer=security__pb2.CertResponse.FromString,
                 _registered_method=True)
@@ -76,9 +76,9 @@ def add_SecurityServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'rqt2.api.v1.SecurityService', rpc_method_handlers)
+            'rqtll.api.v1.SecurityService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('rqt2.api.v1.SecurityService', rpc_method_handlers)
+    server.add_registered_method_handlers('rqtll.api.v1.SecurityService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -99,7 +99,7 @@ class SecurityService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.SecurityService/Authenticate',
+            '/rqtll.api.v1.SecurityService/Authenticate',
             security__pb2.AuthRequest.SerializeToString,
             security__pb2.AuthResponse.FromString,
             options,
@@ -126,7 +126,7 @@ class SecurityService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.SecurityService/RequestNodeCertificate',
+            '/rqtll.api.v1.SecurityService/RequestNodeCertificate',
             security__pb2.CertRequest.SerializeToString,
             security__pb2.CertResponse.FromString,
             options,

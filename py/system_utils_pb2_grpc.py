@@ -36,22 +36,22 @@ class SystemUtilsStub:
             channel: A grpc.Channel.
         """
         self.RestartDaemon = channel.unary_unary(
-                '/rqt2.api.v1.SystemUtils/RestartDaemon',
+                '/rqtll.api.v1.SystemUtils/RestartDaemon',
                 request_serializer=types__pb2.Empty.SerializeToString,
                 response_deserializer=types__pb2.Status.FromString,
                 _registered_method=True)
         self.RunCommand = channel.unary_stream(
-                '/rqt2.api.v1.SystemUtils/RunCommand',
+                '/rqtll.api.v1.SystemUtils/RunCommand',
                 request_serializer=system__utils__pb2.CommandRequest.SerializeToString,
                 response_deserializer=system__utils__pb2.CommandOutput.FromString,
                 _registered_method=True)
         self.StartSSHSession = channel.unary_unary(
-                '/rqt2.api.v1.SystemUtils/StartSSHSession',
+                '/rqtll.api.v1.SystemUtils/StartSSHSession',
                 request_serializer=system__utils__pb2.SSHConfig.SerializeToString,
                 response_deserializer=system__utils__pb2.SSHSession.FromString,
                 _registered_method=True)
         self.ExecRemote = channel.unary_stream(
-                '/rqt2.api.v1.SystemUtils/ExecRemote',
+                '/rqtll.api.v1.SystemUtils/ExecRemote',
                 request_serializer=system__utils__pb2.RemoteExecRequest.SerializeToString,
                 response_deserializer=system__utils__pb2.CommandOutput.FromString,
                 _registered_method=True)
@@ -109,9 +109,9 @@ def add_SystemUtilsServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'rqt2.api.v1.SystemUtils', rpc_method_handlers)
+            'rqtll.api.v1.SystemUtils', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('rqt2.api.v1.SystemUtils', rpc_method_handlers)
+    server.add_registered_method_handlers('rqtll.api.v1.SystemUtils', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -132,7 +132,7 @@ class SystemUtils:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.SystemUtils/RestartDaemon',
+            '/rqtll.api.v1.SystemUtils/RestartDaemon',
             types__pb2.Empty.SerializeToString,
             types__pb2.Status.FromString,
             options,
@@ -159,7 +159,7 @@ class SystemUtils:
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/rqt2.api.v1.SystemUtils/RunCommand',
+            '/rqtll.api.v1.SystemUtils/RunCommand',
             system__utils__pb2.CommandRequest.SerializeToString,
             system__utils__pb2.CommandOutput.FromString,
             options,
@@ -186,7 +186,7 @@ class SystemUtils:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.SystemUtils/StartSSHSession',
+            '/rqtll.api.v1.SystemUtils/StartSSHSession',
             system__utils__pb2.SSHConfig.SerializeToString,
             system__utils__pb2.SSHSession.FromString,
             options,
@@ -213,7 +213,7 @@ class SystemUtils:
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/rqt2.api.v1.SystemUtils/ExecRemote',
+            '/rqtll.api.v1.SystemUtils/ExecRemote',
             system__utils__pb2.RemoteExecRequest.SerializeToString,
             system__utils__pb2.CommandOutput.FromString,
             options,

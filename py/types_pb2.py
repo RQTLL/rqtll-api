@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0btypes.proto\x12\x0brqt2.api.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\x07\n\x05\x45mpty\"\xe3\x02\n\x06Status\x12\n\n\x02ok\x18\x01 \x01(\x08\x12&\n\x04\x63ode\x18\x02 \x01(\x0e\x32\x18.rqt2.api.v1.Status.Code\x12\x0f\n\x07message\x18\x03 \x01(\t\x12\x31\n\x07\x64\x65tails\x18\x04 \x03(\x0b\x32 .rqt2.api.v1.Status.DetailsEntry\x1a.\n\x0c\x44\x65tailsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb0\x01\n\x04\x43ode\x12\x06\n\x02OK\x10\x00\x12\r\n\tCANCELLED\x10\x01\x12\x0b\n\x07UNKNOWN\x10\x02\x12\x14\n\x10INVALID_ARGUMENT\x10\x03\x12\x15\n\x11\x44\x45\x41\x44LINE_EXCEEDED\x10\x04\x12\r\n\tNOT_FOUND\x10\x05\x12\x12\n\x0e\x41LREADY_EXISTS\x10\x06\x12\x15\n\x11PERMISSION_DENIED\x10\x07\x12\x0c\n\x08INTERNAL\x10\r\x12\x0f\n\x0bUNAVAILABLE\x10\x0e\"\x94\x01\n\x08LogEntry\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12$\n\x05level\x18\x02 \x01(\x0e\x32\x15.rqt2.api.v1.LogLevel\x12\x0e\n\x06source\x18\x03 \x01(\t\x12\x0f\n\x07message\x18\x04 \x01(\t\x12\x12\n\nsession_id\x18\x05 \x01(\t\"h\n\x0bProcessInfo\x12\x0b\n\x03pid\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04\x61rgv\x18\x03 \x03(\t\x12\x0b\n\x03\x63wd\x18\x04 \x01(\t\x12#\n\x06status\x18\x05 \x01(\x0b\x32\x13.rqt2.api.v1.Status\"]\n\x08NodeInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x12\n\nexecutable\x18\x03 \x01(\t\x12\x0b\n\x03pid\x18\x04 \x01(\x05\x12\x0f\n\x07node_id\x18\x05 \x01(\t\"N\n\tTopicInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0cmessage_type\x18\x02 \x01(\t\x12\x0b\n\x03qos\x18\x03 \x01(\t\x12\x10\n\x08topic_id\x18\x04 \x01(\t*4\n\x08LogLevel\x12\t\n\x05\x44\x45\x42UG\x10\x00\x12\x08\n\x04INFO\x10\x01\x12\x08\n\x04WARN\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0btypes.proto\x12\x0crqtll.api.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\x07\n\x05\x45mpty\"\xe5\x02\n\x06Status\x12\n\n\x02ok\x18\x01 \x01(\x08\x12\'\n\x04\x63ode\x18\x02 \x01(\x0e\x32\x19.rqtll.api.v1.Status.Code\x12\x0f\n\x07message\x18\x03 \x01(\t\x12\x32\n\x07\x64\x65tails\x18\x04 \x03(\x0b\x32!.rqtll.api.v1.Status.DetailsEntry\x1a.\n\x0c\x44\x65tailsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb0\x01\n\x04\x43ode\x12\x06\n\x02OK\x10\x00\x12\r\n\tCANCELLED\x10\x01\x12\x0b\n\x07UNKNOWN\x10\x02\x12\x14\n\x10INVALID_ARGUMENT\x10\x03\x12\x15\n\x11\x44\x45\x41\x44LINE_EXCEEDED\x10\x04\x12\r\n\tNOT_FOUND\x10\x05\x12\x12\n\x0e\x41LREADY_EXISTS\x10\x06\x12\x15\n\x11PERMISSION_DENIED\x10\x07\x12\x0c\n\x08INTERNAL\x10\r\x12\x0f\n\x0bUNAVAILABLE\x10\x0e\"\x95\x01\n\x08LogEntry\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12%\n\x05level\x18\x02 \x01(\x0e\x32\x16.rqtll.api.v1.LogLevel\x12\x0e\n\x06source\x18\x03 \x01(\t\x12\x0f\n\x07message\x18\x04 \x01(\t\x12\x12\n\nsession_id\x18\x05 \x01(\t\"i\n\x0bProcessInfo\x12\x0b\n\x03pid\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04\x61rgv\x18\x03 \x03(\t\x12\x0b\n\x03\x63wd\x18\x04 \x01(\t\x12$\n\x06status\x18\x05 \x01(\x0b\x32\x14.rqtll.api.v1.Status\"]\n\x08NodeInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x12\n\nexecutable\x18\x03 \x01(\t\x12\x0b\n\x03pid\x18\x04 \x01(\x05\x12\x0f\n\x07node_id\x18\x05 \x01(\t\"N\n\tTopicInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0cmessage_type\x18\x02 \x01(\t\x12\x0b\n\x03qos\x18\x03 \x01(\t\x12\x10\n\x08topic_id\x18\x04 \x01(\t*4\n\x08LogLevel\x12\t\n\x05\x44\x45\x42UG\x10\x00\x12\x08\n\x04INFO\x10\x01\x12\x08\n\x04WARN\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,22 +34,22 @@ if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
   _globals['_STATUS_DETAILSENTRY']._loaded_options = None
   _globals['_STATUS_DETAILSENTRY']._serialized_options = b'8\001'
-  _globals['_LOGLEVEL']._serialized_start=860
-  _globals['_LOGLEVEL']._serialized_end=912
-  _globals['_EMPTY']._serialized_start=61
-  _globals['_EMPTY']._serialized_end=68
-  _globals['_STATUS']._serialized_start=71
-  _globals['_STATUS']._serialized_end=426
-  _globals['_STATUS_DETAILSENTRY']._serialized_start=201
-  _globals['_STATUS_DETAILSENTRY']._serialized_end=247
-  _globals['_STATUS_CODE']._serialized_start=250
-  _globals['_STATUS_CODE']._serialized_end=426
-  _globals['_LOGENTRY']._serialized_start=429
-  _globals['_LOGENTRY']._serialized_end=577
-  _globals['_PROCESSINFO']._serialized_start=579
-  _globals['_PROCESSINFO']._serialized_end=683
-  _globals['_NODEINFO']._serialized_start=685
-  _globals['_NODEINFO']._serialized_end=778
-  _globals['_TOPICINFO']._serialized_start=780
-  _globals['_TOPICINFO']._serialized_end=858
+  _globals['_LOGLEVEL']._serialized_start=865
+  _globals['_LOGLEVEL']._serialized_end=917
+  _globals['_EMPTY']._serialized_start=62
+  _globals['_EMPTY']._serialized_end=69
+  _globals['_STATUS']._serialized_start=72
+  _globals['_STATUS']._serialized_end=429
+  _globals['_STATUS_DETAILSENTRY']._serialized_start=204
+  _globals['_STATUS_DETAILSENTRY']._serialized_end=250
+  _globals['_STATUS_CODE']._serialized_start=253
+  _globals['_STATUS_CODE']._serialized_end=429
+  _globals['_LOGENTRY']._serialized_start=432
+  _globals['_LOGENTRY']._serialized_end=581
+  _globals['_PROCESSINFO']._serialized_start=583
+  _globals['_PROCESSINFO']._serialized_end=688
+  _globals['_NODEINFO']._serialized_start=690
+  _globals['_NODEINFO']._serialized_end=783
+  _globals['_TOPICINFO']._serialized_start=785
+  _globals['_TOPICINFO']._serialized_end=863
 # @@protoc_insertion_point(module_scope)

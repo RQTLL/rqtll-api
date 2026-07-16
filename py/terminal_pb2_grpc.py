@@ -36,27 +36,27 @@ class TerminalServiceStub:
             channel: A grpc.Channel.
         """
         self.Start = channel.unary_unary(
-                '/rqt2.api.v1.TerminalService/Start',
+                '/rqtll.api.v1.TerminalService/Start',
                 request_serializer=terminal__pb2.StartTerminalRequest.SerializeToString,
                 response_deserializer=terminal__pb2.StartTerminalResponse.FromString,
                 _registered_method=True)
         self.Attach = channel.unary_stream(
-                '/rqt2.api.v1.TerminalService/Attach',
+                '/rqtll.api.v1.TerminalService/Attach',
                 request_serializer=terminal__pb2.AttachRequest.SerializeToString,
                 response_deserializer=terminal__pb2.TerminalOutput.FromString,
                 _registered_method=True)
         self.SendInput = channel.unary_unary(
-                '/rqt2.api.v1.TerminalService/SendInput',
+                '/rqtll.api.v1.TerminalService/SendInput',
                 request_serializer=terminal__pb2.TerminalInput.SerializeToString,
                 response_deserializer=types__pb2.Status.FromString,
                 _registered_method=True)
         self.Resize = channel.unary_unary(
-                '/rqt2.api.v1.TerminalService/Resize',
+                '/rqtll.api.v1.TerminalService/Resize',
                 request_serializer=terminal__pb2.TerminalResize.SerializeToString,
                 response_deserializer=types__pb2.Status.FromString,
                 _registered_method=True)
         self.Close = channel.unary_unary(
-                '/rqt2.api.v1.TerminalService/Close',
+                '/rqtll.api.v1.TerminalService/Close',
                 request_serializer=terminal__pb2.SessionRequest.SerializeToString,
                 response_deserializer=types__pb2.Status.FromString,
                 _registered_method=True)
@@ -130,9 +130,9 @@ def add_TerminalServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'rqt2.api.v1.TerminalService', rpc_method_handlers)
+            'rqtll.api.v1.TerminalService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('rqt2.api.v1.TerminalService', rpc_method_handlers)
+    server.add_registered_method_handlers('rqtll.api.v1.TerminalService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -153,7 +153,7 @@ class TerminalService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.TerminalService/Start',
+            '/rqtll.api.v1.TerminalService/Start',
             terminal__pb2.StartTerminalRequest.SerializeToString,
             terminal__pb2.StartTerminalResponse.FromString,
             options,
@@ -180,7 +180,7 @@ class TerminalService:
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/rqt2.api.v1.TerminalService/Attach',
+            '/rqtll.api.v1.TerminalService/Attach',
             terminal__pb2.AttachRequest.SerializeToString,
             terminal__pb2.TerminalOutput.FromString,
             options,
@@ -207,7 +207,7 @@ class TerminalService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.TerminalService/SendInput',
+            '/rqtll.api.v1.TerminalService/SendInput',
             terminal__pb2.TerminalInput.SerializeToString,
             types__pb2.Status.FromString,
             options,
@@ -234,7 +234,7 @@ class TerminalService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.TerminalService/Resize',
+            '/rqtll.api.v1.TerminalService/Resize',
             terminal__pb2.TerminalResize.SerializeToString,
             types__pb2.Status.FromString,
             options,
@@ -261,7 +261,7 @@ class TerminalService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.TerminalService/Close',
+            '/rqtll.api.v1.TerminalService/Close',
             terminal__pb2.SessionRequest.SerializeToString,
             types__pb2.Status.FromString,
             options,

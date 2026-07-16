@@ -36,27 +36,27 @@ class WorkspaceServiceStub:
             channel: A grpc.Channel.
         """
         self.OpenWorkspace = channel.unary_unary(
-                '/rqt2.api.v1.WorkspaceService/OpenWorkspace',
+                '/rqtll.api.v1.WorkspaceService/OpenWorkspace',
                 request_serializer=workspace__pb2.OpenWorkspaceRequest.SerializeToString,
                 response_deserializer=workspace__pb2.OpenWorkspaceResponse.FromString,
                 _registered_method=True)
         self.ListPackages = channel.unary_unary(
-                '/rqt2.api.v1.WorkspaceService/ListPackages',
+                '/rqtll.api.v1.WorkspaceService/ListPackages',
                 request_serializer=workspace__pb2.ListWorkspacePackagesRequest.SerializeToString,
                 response_deserializer=workspace__pb2.ListWorkspacePackagesResponse.FromString,
                 _registered_method=True)
         self.CreatePackage = channel.unary_unary(
-                '/rqt2.api.v1.WorkspaceService/CreatePackage',
+                '/rqtll.api.v1.WorkspaceService/CreatePackage',
                 request_serializer=workspace__pb2.CreatePackageRequest.SerializeToString,
                 response_deserializer=types__pb2.Status.FromString,
                 _registered_method=True)
         self.CreateWorkspace = channel.unary_unary(
-                '/rqt2.api.v1.WorkspaceService/CreateWorkspace',
+                '/rqtll.api.v1.WorkspaceService/CreateWorkspace',
                 request_serializer=workspace__pb2.CreateWorkspaceRequest.SerializeToString,
                 response_deserializer=types__pb2.Status.FromString,
                 _registered_method=True)
         self.CreateNodesAndLaunchers = channel.unary_unary(
-                '/rqt2.api.v1.WorkspaceService/CreateNodesAndLaunchers',
+                '/rqtll.api.v1.WorkspaceService/CreateNodesAndLaunchers',
                 request_serializer=workspace__pb2.CreateNodesAndLaunchersRequest.SerializeToString,
                 response_deserializer=types__pb2.Status.FromString,
                 _registered_method=True)
@@ -125,9 +125,9 @@ def add_WorkspaceServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'rqt2.api.v1.WorkspaceService', rpc_method_handlers)
+            'rqtll.api.v1.WorkspaceService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('rqt2.api.v1.WorkspaceService', rpc_method_handlers)
+    server.add_registered_method_handlers('rqtll.api.v1.WorkspaceService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -148,7 +148,7 @@ class WorkspaceService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.WorkspaceService/OpenWorkspace',
+            '/rqtll.api.v1.WorkspaceService/OpenWorkspace',
             workspace__pb2.OpenWorkspaceRequest.SerializeToString,
             workspace__pb2.OpenWorkspaceResponse.FromString,
             options,
@@ -175,7 +175,7 @@ class WorkspaceService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.WorkspaceService/ListPackages',
+            '/rqtll.api.v1.WorkspaceService/ListPackages',
             workspace__pb2.ListWorkspacePackagesRequest.SerializeToString,
             workspace__pb2.ListWorkspacePackagesResponse.FromString,
             options,
@@ -202,7 +202,7 @@ class WorkspaceService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.WorkspaceService/CreatePackage',
+            '/rqtll.api.v1.WorkspaceService/CreatePackage',
             workspace__pb2.CreatePackageRequest.SerializeToString,
             types__pb2.Status.FromString,
             options,
@@ -229,7 +229,7 @@ class WorkspaceService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.WorkspaceService/CreateWorkspace',
+            '/rqtll.api.v1.WorkspaceService/CreateWorkspace',
             workspace__pb2.CreateWorkspaceRequest.SerializeToString,
             types__pb2.Status.FromString,
             options,
@@ -256,7 +256,7 @@ class WorkspaceService:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/rqt2.api.v1.WorkspaceService/CreateNodesAndLaunchers',
+            '/rqtll.api.v1.WorkspaceService/CreateNodesAndLaunchers',
             workspace__pb2.CreateNodesAndLaunchersRequest.SerializeToString,
             types__pb2.Status.FromString,
             options,

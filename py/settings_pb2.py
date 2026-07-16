@@ -23,34 +23,33 @@ _sym_db = _symbol_database.Default()
 
 
 import types_pb2 as types__pb2
-from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0esettings.proto\x12\x0brqt2.api.v1\x1a\x0btypes.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"%\n\x07Setting\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"0\n\x12GetSettingsRequest\x12\r\n\x05scope\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\"]\n\x0fSettingResponse\x12%\n\x07setting\x18\x01 \x01(\x0b\x32\x14.rqt2.api.v1.Setting\x12#\n\x06status\x18\x02 \x01(\x0b\x32\x13.rqt2.api.v1.Status\"J\n\x12SetSettingsRequest\x12\r\n\x05scope\x18\x01 \x01(\t\x12%\n\x07setting\x18\x02 \x01(\x0b\x32\x14.rqt2.api.v1.Setting\"$\n\x13ListSettingsRequest\x12\r\n\x05scope\x18\x01 \x01(\t\"c\n\x14ListSettingsResponse\x12&\n\x08settings\x18\x01 \x03(\x0b\x32\x14.rqt2.api.v1.Setting\x12#\n\x06status\x18\x02 \x01(\x0b\x32\x13.rqt2.api.v1.Status\"%\n\x14WatchSettingsRequest\x12\r\n\x05scope\x18\x01 \x01(\t\"\x91\x01\n\x0cSettingEvent\x12,\n\x04type\x18\x01 \x01(\x0e\x32\x1e.rqt2.api.v1.SettingEvent.Type\x12%\n\x07setting\x18\x02 \x01(\x0b\x32\x14.rqt2.api.v1.Setting\",\n\x04Type\x12\t\n\x05\x41\x44\x44\x45\x44\x10\x00\x12\x0c\n\x08MODIFIED\x10\x01\x12\x0b\n\x07REMOVED\x10\x02\x32\xaa\x02\n\x0fSettingsService\x12\x44\n\x03Get\x12\x1f.rqt2.api.v1.GetSettingsRequest\x1a\x1c.rqt2.api.v1.SettingResponse\x12;\n\x03Set\x12\x1f.rqt2.api.v1.SetSettingsRequest\x1a\x13.rqt2.api.v1.Status\x12K\n\x04List\x12 .rqt2.api.v1.ListSettingsRequest\x1a!.rqt2.api.v1.ListSettingsResponse\x12G\n\x05Watch\x12!.rqt2.api.v1.WatchSettingsRequest\x1a\x19.rqt2.api.v1.SettingEvent0\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0esettings.proto\x12\x0crqtll.api.v1\x1a\x0btypes.proto\"%\n\x07Setting\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"0\n\x12GetSettingsRequest\x12\r\n\x05scope\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\"_\n\x0fSettingResponse\x12&\n\x07setting\x18\x01 \x01(\x0b\x32\x15.rqtll.api.v1.Setting\x12$\n\x06status\x18\x02 \x01(\x0b\x32\x14.rqtll.api.v1.Status\"K\n\x12SetSettingsRequest\x12\r\n\x05scope\x18\x01 \x01(\t\x12&\n\x07setting\x18\x02 \x01(\x0b\x32\x15.rqtll.api.v1.Setting\"$\n\x13ListSettingsRequest\x12\r\n\x05scope\x18\x01 \x01(\t\"e\n\x14ListSettingsResponse\x12\'\n\x08settings\x18\x01 \x03(\x0b\x32\x15.rqtll.api.v1.Setting\x12$\n\x06status\x18\x02 \x01(\x0b\x32\x14.rqtll.api.v1.Status\"%\n\x14WatchSettingsRequest\x12\r\n\x05scope\x18\x01 \x01(\t\"\x93\x01\n\x0cSettingEvent\x12-\n\x04type\x18\x01 \x01(\x0e\x32\x1f.rqtll.api.v1.SettingEvent.Type\x12&\n\x07setting\x18\x02 \x01(\x0b\x32\x15.rqtll.api.v1.Setting\",\n\x04Type\x12\t\n\x05\x41\x44\x44\x45\x44\x10\x00\x12\x0c\n\x08MODIFIED\x10\x01\x12\x0b\n\x07REMOVED\x10\x02\x32\xb2\x02\n\x0fSettingsService\x12\x46\n\x03Get\x12 .rqtll.api.v1.GetSettingsRequest\x1a\x1d.rqtll.api.v1.SettingResponse\x12=\n\x03Set\x12 .rqtll.api.v1.SetSettingsRequest\x1a\x14.rqtll.api.v1.Status\x12M\n\x04List\x12!.rqtll.api.v1.ListSettingsRequest\x1a\".rqtll.api.v1.ListSettingsResponse\x12I\n\x05Watch\x12\".rqtll.api.v1.WatchSettingsRequest\x1a\x1a.rqtll.api.v1.SettingEvent0\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'settings_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_SETTING']._serialized_start=77
-  _globals['_SETTING']._serialized_end=114
-  _globals['_GETSETTINGSREQUEST']._serialized_start=116
-  _globals['_GETSETTINGSREQUEST']._serialized_end=164
-  _globals['_SETTINGRESPONSE']._serialized_start=166
-  _globals['_SETTINGRESPONSE']._serialized_end=259
-  _globals['_SETSETTINGSREQUEST']._serialized_start=261
-  _globals['_SETSETTINGSREQUEST']._serialized_end=335
-  _globals['_LISTSETTINGSREQUEST']._serialized_start=337
-  _globals['_LISTSETTINGSREQUEST']._serialized_end=373
-  _globals['_LISTSETTINGSRESPONSE']._serialized_start=375
-  _globals['_LISTSETTINGSRESPONSE']._serialized_end=474
-  _globals['_WATCHSETTINGSREQUEST']._serialized_start=476
-  _globals['_WATCHSETTINGSREQUEST']._serialized_end=513
-  _globals['_SETTINGEVENT']._serialized_start=516
-  _globals['_SETTINGEVENT']._serialized_end=661
-  _globals['_SETTINGEVENT_TYPE']._serialized_start=617
-  _globals['_SETTINGEVENT_TYPE']._serialized_end=661
-  _globals['_SETTINGSSERVICE']._serialized_start=664
-  _globals['_SETTINGSSERVICE']._serialized_end=962
+  _globals['_SETTING']._serialized_start=45
+  _globals['_SETTING']._serialized_end=82
+  _globals['_GETSETTINGSREQUEST']._serialized_start=84
+  _globals['_GETSETTINGSREQUEST']._serialized_end=132
+  _globals['_SETTINGRESPONSE']._serialized_start=134
+  _globals['_SETTINGRESPONSE']._serialized_end=229
+  _globals['_SETSETTINGSREQUEST']._serialized_start=231
+  _globals['_SETSETTINGSREQUEST']._serialized_end=306
+  _globals['_LISTSETTINGSREQUEST']._serialized_start=308
+  _globals['_LISTSETTINGSREQUEST']._serialized_end=344
+  _globals['_LISTSETTINGSRESPONSE']._serialized_start=346
+  _globals['_LISTSETTINGSRESPONSE']._serialized_end=447
+  _globals['_WATCHSETTINGSREQUEST']._serialized_start=449
+  _globals['_WATCHSETTINGSREQUEST']._serialized_end=486
+  _globals['_SETTINGEVENT']._serialized_start=489
+  _globals['_SETTINGEVENT']._serialized_end=636
+  _globals['_SETTINGEVENT_TYPE']._serialized_start=592
+  _globals['_SETTINGEVENT_TYPE']._serialized_end=636
+  _globals['_SETTINGSSERVICE']._serialized_start=639
+  _globals['_SETTINGSSERVICE']._serialized_end=945
 # @@protoc_insertion_point(module_scope)

@@ -35,12 +35,12 @@ class PackageServiceStub:
             channel: A grpc.Channel.
         """
         self.ListAvailablePackages = channel.unary_stream(
-                '/rqt2.api.v1.PackageService/ListAvailablePackages',
+                '/rqtll.api.v1.PackageService/ListAvailablePackages',
                 request_serializer=packages__pb2.ListPackagesRequest.SerializeToString,
                 response_deserializer=packages__pb2.PackageInfo.FromString,
                 _registered_method=True)
         self.InstallPackage = channel.unary_stream(
-                '/rqt2.api.v1.PackageService/InstallPackage',
+                '/rqtll.api.v1.PackageService/InstallPackage',
                 request_serializer=packages__pb2.InstallRequest.SerializeToString,
                 response_deserializer=packages__pb2.InstallProgress.FromString,
                 _registered_method=True)
@@ -76,9 +76,9 @@ def add_PackageServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'rqt2.api.v1.PackageService', rpc_method_handlers)
+            'rqtll.api.v1.PackageService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('rqt2.api.v1.PackageService', rpc_method_handlers)
+    server.add_registered_method_handlers('rqtll.api.v1.PackageService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -99,7 +99,7 @@ class PackageService:
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/rqt2.api.v1.PackageService/ListAvailablePackages',
+            '/rqtll.api.v1.PackageService/ListAvailablePackages',
             packages__pb2.ListPackagesRequest.SerializeToString,
             packages__pb2.PackageInfo.FromString,
             options,
@@ -126,7 +126,7 @@ class PackageService:
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/rqt2.api.v1.PackageService/InstallPackage',
+            '/rqtll.api.v1.PackageService/InstallPackage',
             packages__pb2.InstallRequest.SerializeToString,
             packages__pb2.InstallProgress.FromString,
             options,

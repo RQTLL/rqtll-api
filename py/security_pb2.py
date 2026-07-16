@@ -25,23 +25,23 @@ _sym_db = _symbol_database.Default()
 import types_pb2 as types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0esecurity.proto\x12\x0brqt2.api.v1\x1a\x0btypes.proto\"1\n\x0b\x41uthRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\"\x92\x01\n\x0c\x41uthResponse\x12\x15\n\rauthenticated\x18\x01 \x01(\x08\x12\r\n\x05token\x18\x02 \x01(\t\x12#\n\x04role\x18\x03 \x01(\x0e\x32\x15.rqt2.api.v1.UserRole\x12\x12\n\nsession_id\x18\x04 \x01(\t\x12#\n\x06status\x18\x05 \x01(\x0b\x32\x13.rqt2.api.v1.Status\"\x1a\n\x0b\x43\x65rtRequest\x12\x0b\n\x03\x63sr\x18\x01 \x01(\t\"T\n\x0c\x43\x65rtResponse\x12\n\n\x02ok\x18\x01 \x01(\x08\x12\x17\n\x0f\x63\x65rtificate_pem\x18\x02 \x01(\t\x12\x0e\n\x06\x63\x61_pem\x18\x03 \x01(\t\x12\x0f\n\x07message\x18\x04 \x01(\t*=\n\x08UserRole\x12\t\n\x05GUEST\x10\x00\x12\x0c\n\x08OPERATOR\x10\x01\x12\r\n\tDEVELOPER\x10\x02\x12\t\n\x05\x41\x44MIN\x10\x03\x32\xa5\x01\n\x0fSecurityService\x12\x43\n\x0c\x41uthenticate\x12\x18.rqt2.api.v1.AuthRequest\x1a\x19.rqt2.api.v1.AuthResponse\x12M\n\x16RequestNodeCertificate\x12\x18.rqt2.api.v1.CertRequest\x1a\x19.rqt2.api.v1.CertResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0esecurity.proto\x12\x0crqtll.api.v1\x1a\x0btypes.proto\"1\n\x0b\x41uthRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\"\x94\x01\n\x0c\x41uthResponse\x12\x15\n\rauthenticated\x18\x01 \x01(\x08\x12\r\n\x05token\x18\x02 \x01(\t\x12$\n\x04role\x18\x03 \x01(\x0e\x32\x16.rqtll.api.v1.UserRole\x12\x12\n\nsession_id\x18\x04 \x01(\t\x12$\n\x06status\x18\x05 \x01(\x0b\x32\x14.rqtll.api.v1.Status\"\x1a\n\x0b\x43\x65rtRequest\x12\x0b\n\x03\x63sr\x18\x01 \x01(\t\"T\n\x0c\x43\x65rtResponse\x12\n\n\x02ok\x18\x01 \x01(\x08\x12\x17\n\x0f\x63\x65rtificate_pem\x18\x02 \x01(\t\x12\x0e\n\x06\x63\x61_pem\x18\x03 \x01(\t\x12\x0f\n\x07message\x18\x04 \x01(\t*=\n\x08UserRole\x12\t\n\x05GUEST\x10\x00\x12\x0c\n\x08OPERATOR\x10\x01\x12\r\n\tDEVELOPER\x10\x02\x12\t\n\x05\x41\x44MIN\x10\x03\x32\xa9\x01\n\x0fSecurityService\x12\x45\n\x0c\x41uthenticate\x12\x19.rqtll.api.v1.AuthRequest\x1a\x1a.rqtll.api.v1.AuthResponse\x12O\n\x16RequestNodeCertificate\x12\x19.rqtll.api.v1.CertRequest\x1a\x1a.rqtll.api.v1.CertResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'security_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_USERROLE']._serialized_start=358
-  _globals['_USERROLE']._serialized_end=419
-  _globals['_AUTHREQUEST']._serialized_start=44
-  _globals['_AUTHREQUEST']._serialized_end=93
-  _globals['_AUTHRESPONSE']._serialized_start=96
-  _globals['_AUTHRESPONSE']._serialized_end=242
-  _globals['_CERTREQUEST']._serialized_start=244
-  _globals['_CERTREQUEST']._serialized_end=270
-  _globals['_CERTRESPONSE']._serialized_start=272
-  _globals['_CERTRESPONSE']._serialized_end=356
-  _globals['_SECURITYSERVICE']._serialized_start=422
-  _globals['_SECURITYSERVICE']._serialized_end=587
+  _globals['_USERROLE']._serialized_start=361
+  _globals['_USERROLE']._serialized_end=422
+  _globals['_AUTHREQUEST']._serialized_start=45
+  _globals['_AUTHREQUEST']._serialized_end=94
+  _globals['_AUTHRESPONSE']._serialized_start=97
+  _globals['_AUTHRESPONSE']._serialized_end=245
+  _globals['_CERTREQUEST']._serialized_start=247
+  _globals['_CERTREQUEST']._serialized_end=273
+  _globals['_CERTRESPONSE']._serialized_start=275
+  _globals['_CERTRESPONSE']._serialized_end=359
+  _globals['_SECURITYSERVICE']._serialized_start=425
+  _globals['_SECURITYSERVICE']._serialized_end=594
 # @@protoc_insertion_point(module_scope)
