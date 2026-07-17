@@ -9,6 +9,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "proto/clone_ws.proto",
         "proto/data_stream.proto",
         "proto/execution.proto",
+        "proto/interactive_execution.proto",
         "proto/introspection.proto",
         "proto/security.proto",
         "proto/system_utils.proto",
