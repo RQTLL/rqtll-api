@@ -55,6 +55,11 @@ class CommandExecutionServiceStub:
                 request_serializer=interactive__execution__pb2.ExecutionControl.SerializeToString,
                 response_deserializer=interactive__execution__pb2.ExecutionStatus.FromString,
                 _registered_method=True)
+        self.GetActiveSessions = channel.unary_unary(
+                '/rqtll.api.v1.CommandExecutionService/GetActiveSessions',
+                request_serializer=types__pb2.Empty.SerializeToString,
+                response_deserializer=interactive__execution__pb2.ActiveSessionsResponse.FromString,
+                _registered_method=True)
 
 
 class CommandExecutionServiceServicer:
@@ -84,6 +89,12 @@ class CommandExecutionServiceServicer:
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetActiveSessions(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CommandExecutionServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -106,6 +117,11 @@ def add_CommandExecutionServiceServicer_to_server(servicer, server):
                     servicer.ControlSession,
                     request_deserializer=interactive__execution__pb2.ExecutionControl.FromString,
                     response_serializer=interactive__execution__pb2.ExecutionStatus.SerializeToString,
+            ),
+            'GetActiveSessions': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetActiveSessions,
+                    request_deserializer=types__pb2.Empty.FromString,
+                    response_serializer=interactive__execution__pb2.ActiveSessionsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -216,6 +232,33 @@ class CommandExecutionService:
             '/rqtll.api.v1.CommandExecutionService/ControlSession',
             interactive__execution__pb2.ExecutionControl.SerializeToString,
             interactive__execution__pb2.ExecutionStatus.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetActiveSessions(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/rqtll.api.v1.CommandExecutionService/GetActiveSessions',
+            types__pb2.Empty.SerializeToString,
+            interactive__execution__pb2.ActiveSessionsResponse.FromString,
             options,
             channel_credentials,
             insecure,
